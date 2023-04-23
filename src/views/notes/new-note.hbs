@@ -1,0 +1,28 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-body">
+                {{> errors }}
+                
+
+                <form action="/notas/save" method="POST" autocomplete="off">
+                    <div class="form-group">
+                        <label for="titulo" class="form-control">Titulo</label>
+                        <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Titulo..." autofocus/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion" class="form-control">Descripcion</label>
+                        <textarea name="descripcion" id="descripcion" class="form-control" placeholder="Descripcion..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Guardar Nota</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

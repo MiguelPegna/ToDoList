@@ -1,0 +1,30 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-body">
+                {{> errors }}
+                
+
+                <form action="/notas/update/{{note._id}}?_method=PUT" method="POST" autocomplete="off">
+                    <input type="hidden" name="_method" value="PUT" >
+                    <div class="form-group">
+                        <h3>Editar nota</h3>
+                        <label for="titulo" class="form-control">Titulo</label>
+                        <input type="text" name="titulo" id="titulo" class="form-control" value="{{note.titulo}}" autofocus/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descripcion" class="form-control">Descripcion</label>
+                        <textarea name="descripcion" id="descripcion" class="form-control">{{note.descripcion}}</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Guardar Nota</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="row">
+    {{#each notes}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-between align-items-center">{{titulo}}
+                <a href="/notas/edit/{{_id}}">[editar]</a>&nbsp;
+                
+                <form action="/notas/delete/{{_id}}?_method=DELETE" method="POST" autocomplete="off">
+                    <input type="hidden" name="_method" value="DELETE" >
+                    <button type="submit" class="btn alert-danger">[X]</button></h5>
+                </form>
+                <p>{{descripcion}}</p>
+                <hr>
+                {{#if estado}}
+                <a href="/notas/done/{{_id}}" class="btn alert-warning">Tarea Pendiente</a>
+                {{else}}
+                <a href="/notas/done/{{_id}}" class="btn alert-primary">Tarea Hecha</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title d-flex justify-content-between align-items-center">No hay notas para mostrar</h5>
+            <a href="/notas/add" class="btn btn-success btn-block">Crear Nota</a>
+        </div>
+    </div>
+    {{/each}}
+</div>
